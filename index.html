@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Set UP Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+        rel="stylesheet">
+
+    <!-- css files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="css/all.min.css"> -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>BookMark</title>
+</head>
+
+<body>
+
+    <div class="container mx-auto">
+
+        <!--  -->
+        <h1 class="py-5 text-center">
+            <span class="position-relative">Bookmarker</span>
+        </h1>
+        <!--  -->
+        <div class="container-box py-2 mx-auto">
+
+            <div class="content w-75 py-4 mx-auto">
+                <h3 class="fw-bold fs-3 text-center">
+                    <i class="fa-solid fa-bookmark"></i>
+                    Bookmark your favorite sites
+                    <i class="fa-solid fa-bookmark last-child"></i>
+                </h3>
+
+                <label for="#bookName" class="text-capitalize mt-4 fw-bold">
+                    <i class="fa-solid fa-book-bookmark me-2"></i>
+                    site name
+                </label>
+                <div class="input-field position-relative ">
+
+                    <input type="text" id="bookName" placeholder="Bookmark Name"
+                        class="py-2 px-2 rounded-3 w-100 mb-4 mt-2 border border-1 border-secondary"
+                        oninput="nameInputIsValid()">
+                    <i class="fa-solid fa-circle-exclamation text-danger position-absolute fs-5 d-none nameCorrectIcon"
+                        id="nameExlmIcon"></i>
+                    <i class="fa-solid fa-check text-success position-absolute fs-5 d-none" id="nameCorrectIcon"></i>
+                </div>
+                <!-- Book Name -->
+
+                <label for="#bookURL" class="text-capitalize fw-bold">
+                    <i class="fa-solid fa-link me-2"></i>
+                    Site URL
+                </label>
+
+                <div class="input-field position-relative">
+                    <input type="text" id="webURL" placeholder="Website URL"
+                        class="py-2 px-2 rounded-3 w-100 mb-4 mt-2 border border-1 border-secondary"
+                        oninput="urlInputIsValid()">
+                    <i class="fa-solid fa-circle-exclamation text-danger position-absolute fs-5 d-none "
+                        id="urlExlmIcon"></i>
+                    <i class="fa-solid fa-check text-success position-absolute fs-5 d-none" id="urlCorrectIcon"></i>
+                </div>
+
+                <!-- Website URL -->
+                <button class="btn btn-submit px-5 fs-6 text-white rounded-3 mx-auto d-block" id="submitBtn"
+                    onclick="getBook()">Submit</button>
+            </div>
+
+        </div>
+
+        <table class=" table bg-white mt-5 text-center align-middle">
+            <thead>
+                <th class="text-capitalize">index</th>
+                <th class="text-capitalize">website name</th>
+                <th class="text-capitalize">visit</th>
+                <th class="text-capitalize">delete</th>
+            </thead>
+            <tbody id="tableBody">
+
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="layer vh-100 vw-100 position-absolute bg-dark  bg-opacity-50 d-none" id="validLayer"
+        onclick="closeValidMassege()"></div>
+
+    <div class="bg-light rounded-3 p-3 w-50 position-absolute valid-message d-none" id="validMessage">
+        <div class="d-flex align-items-center justify-content-between">
+
+            <ul class="d-flex gap-3 p-0 mb-0 ">
+                <li class="rounded-circle colored-circle bg-danger"></li>
+                <li class="rounded-circle colored-circle bg-black"></li>
+                <li class="rounded-circle colored-circle bg-success"></li>
+            </ul>
+
+            <button class="fa-solid fa-xmark border-0 fs-2 bg-transparent" onclick="closeValidMassege()"></button>
+        </div>
+
+        <div class="mt-4">
+            <p class="h5 layer-head mb-4 fs-3">Site Name or Url is not valid, Please follow the rules below :</p>
+            <ul class="p-0 mb-0">
+                <li class="mb-3 d-flex align-items-center">
+                    <i class="fa-regular fa-circle-right me-2 text-danger fs-4"></i>
+                    Site name must contain at least 3 characters
+                </li>
+                <li class="d-flex align-items-center">
+                    <i class="fa-regular fa-circle-right me-2 text-danger fs-4"></i>
+                    Site URL must be a valid one
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- <script src="js/all.min.js"></script> -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

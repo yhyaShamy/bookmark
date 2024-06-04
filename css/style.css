@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "PT Sans Caption", sans-serif;
+  background-color: hsl(36, 100%, 95%);
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-family: "Pacifico";
+  font-size: 4rem;
+}
+
+h1 span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  bottom: 20%;
+  left: 0;
+  background-color: #fec260;
+  z-index: -1;
+  transition: height 0.5s;
+}
+
+h1 span:hover::after {
+  height: 40%;
+}
+
+h3 {
+  font-family: "Righteous";
+  /* Fallback: Set a background color. */
+  background-color: red;
+
+  /* Create the gradient. */
+  background-image: linear-gradient(to right, #3fa55b, #b2ac4a);
+
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+h3:first-child {
+  color: #3fa55b;
+}
+
+h3 .last-child {
+  color: #b2ac4a;
+}
+
+.container-box {
+  border-bottom: 2px dashed black;
+  border-top: 2px dashed black;
+}
+
+.btn-submit {
+  background-color: #d1512d;
+  transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: hsl(13, 65%, 45%);
+}
+
+.input-field i {
+  right: 0.7rem;
+  bottom: 50%;
+  transform: translateY(20%);
+}
+
+.layer {
+  top: 0;
+}
+
+.colored-circle {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.layer-head {
+  font-family: "Bree Serif";
+}
+
+.valid-message {
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%, 50%);
+}
